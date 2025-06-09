@@ -12,6 +12,13 @@ spring:
           project-id: protocol-playground
           location: us-central1
 
+  grpc:
+    server:
+      ssl:
+        secure: true
+        client-auth: none
+        bundle: server-http3
+      port: 9443
   ssl:
     bundle:
       jks:
@@ -20,4 +27,4 @@ spring:
             alias: http3
           keystore:
             location: classpath:keystore.p12
-            password: andersen
+            password: ${JKS_PASSWORD}
