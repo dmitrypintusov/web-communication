@@ -9,7 +9,7 @@ spring:
               temperature: 0.4
               max-output-tokens: 256
               max-tokens: 256
-          project-id: protocol-playground
+          project-id: ${GOOGLE_PROJECT_ID}
           location: us-central1
 
   grpc:

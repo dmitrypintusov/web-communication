@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import reactor.netty.http.Http3SslContextSpec;
 import reactor.netty.http.HttpProtocol;
 
-//@Component
+@Component
 public class Http3Config implements WebServerFactoryCustomizer<NettyReactiveWebServerFactory> {
 
   @Override
