@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.andersen.meetup.web.communication.proto";
+option java_outer_classname = "WebCommunicationGrpcProto";
+
+service WebCommunicationGrpcService {
+
+  rpc UnaryGrpc(ChatRequest) returns (ChatResponse) {}
+
+  rpc ServerStreamGrpc(ChatRequest) returns (stream ChatResponse) {}
+
+  rpc ClientStreamGrpc(stream ChatRequest) returns (ChatResponse) {}
+
+  rpc BidirectionalStreamGrpc(stream ChatRequest) returns (stream ChatResponse) {}
+}
+
+message ChatRequest {
+  string question = 1;
+}
+
+message ChatResponse {
+  string output = 1;
+}
