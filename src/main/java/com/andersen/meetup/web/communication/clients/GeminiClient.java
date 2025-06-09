@@ -13,10 +13,10 @@ import reactor.core.publisher.Flux;
 public class GeminiClient {
 
   private VertexAiGeminiChatModel chatModel;
+  private static final UserMessage limit = new UserMessage("Limit the output to 2 sentences");
 
   public String getChatResponse(String value) {
     UserMessage input = new UserMessage(value);
-    UserMessage limit = new UserMessage("Limit the output to 2 sentences");
 
     return chatModel.call(new Prompt(List.of(input, limit)))
         .getResult().getOutput().getText();
@@ -24,7 +24,6 @@ public class GeminiClient {
 
   public Flux<String> getChatStream(String value) {
     UserMessage input = new UserMessage(value);
-    UserMessage limit = new UserMessage("Limit the output to 2 sentences");
 
     return chatModel.stream(new Prompt(List.of(input, limit)))
         .map(chatResponse -> chatResponse.getResult().getOutput().getText());

@@ -9,9 +9,16 @@ spring:
               temperature: 0.4
               max-output-tokens: 256
               max-tokens: 256
-          project-id: protocol-playground
+          project-id: ${GOOGLE_PROJECT_ID}
           location: us-central1
 
+  grpc:
+    server:
+      ssl:
+        secure: true
+        client-auth: none
+        bundle: server-http3
+      port: 9443
   ssl:
     bundle:
       jks:
@@ -20,4 +27,4 @@ spring:
             alias: http3
           keystore:
             location: classpath:keystore.p12
-            password: andersen
+            password: ${JKS_PASSWORD}
