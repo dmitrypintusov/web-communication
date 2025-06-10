@@ -57,24 +57,28 @@ To successfully run this project, ensure you have the following configured:
         * Replace `myalias`, `YourOrgUnit`, `YourOrg`, `YourCity`, `YourState`, and `YourCountry` with your desired values.
         * You will be prompted to enter a password for the keystore. **Remember this password** as you'll need it for the next step.
 
-4.  **Environment Variable `JKS_PASSWORD`**:
+4.  **Environment variables**
     * Set an environment variable named `JKS_PASSWORD` that holds the password you set for the `keystore.p12` file. The application will use this to access the keystore.
+    * Set an environment variable named `GOOGLE_PROJECT_ID`specifying the Google Cloud Project ID with enabled Gemini API.
 
     * **For Linux/macOS:**
         ```bash
         export JKS_PASSWORD="your_keystore_password"
+        export GOOGLE_PROJECT_ID="your_google_project_id"
         ```
     * **For Windows (Command Prompt):**
         ```cmd
         set JKS_PASSWORD="your_keystore_password"
+        set GOOGLE_PROJECT_ID="your_google_project_id"
         ```
     * **For Windows (PowerShell):**
         ```powershell
         $env:JKS_PASSWORD="your_keystore_password"
+        $env:GOOGLE_PROJECT_ID="your_google_project_id"
         ```
     * **Note**: For production environments, it's highly recommended to use more secure methods for managing sensitive information like passwords (e.g., secret management services).
 
-5.  **Install `grpcurl` and `Cloudflare curl`**:
+6.  **Install `grpcurl` and `Cloudflare curl`**:
     * **`grpcurl`**: A command-line tool for interacting with gRPC servers.
         * **Installation instructions**: Refer to the official `grpcurl` GitHub repository for binaries or your package manager: [https://github.com/fullstorydev/grpcurl](https://github.com/fullstorydev/grpcurl)
         * **Example (Homebrew for macOS):** `brew install grpcurl`
