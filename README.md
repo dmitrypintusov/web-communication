@@ -80,24 +80,23 @@ To successfully run this project, ensure you have the following configured:
 
 6.  **Install `grpcurl` and `Cloudflare curl`**:
     * **`grpcurl`**: A command-line tool for interacting with gRPC servers.
-        * **Installation instructions**: Refer to the official `grpcurl` GitHub repository for binaries or your package manager: [https://github.com/fullstorydev/grpcurl](https://github.com/fullstorydev/grpcurl)
-        * **Example (Homebrew for macOS):** `brew install grpcurl`
+    * **Installation instructions**: Refer to the official `grpcurl` GitHub repository for binaries or your package manager: [https://github.com/fullstorydev/grpcurl](https://github.com/fullstorydev/grpcurl)
+    * **Example (Homebrew for macOS):** `brew install grpcurl`
 
 * **HTTP/3-enabled `curl`**: To test HTTP/3 (QUIC) endpoints, you need a `curl` version compiled with HTTP/3 support.
-        * **Check existing `curl`**: Run `curl --version | grep Features | grep H3`. If `H3` is listed, your `curl` supports HTTP/3.
-        * **Installation on macOS (Homebrew)**:
-            ```bash
-            brew remove -f curl # Remove existing curl if installed via homebrew
-            brew install cloudflare/cloudflare/curl
-            # Add curl to your PATH. Adjust if you use .bashrc or another shell config file.
-            echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >> ~/.zshrc
-            source ~/.zshrc
-            ```
+    * **Check existing `curl`**: Run `curl --version | grep Features | grep H3`. If `H3` is listed, your `curl` supports HTTP/3.
+    * **Installation on macOS (Homebrew)**:
+      ```bash
+      brew remove -f curl # Remove existing curl if installed via homebrew
+      brew install cloudflare/cloudflare/curl
+      # Add curl to your PATH. Adjust if you use .bashrc or another shell config file.
+      echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >> ~/.zshrc
+      source ~/.zshrc
+      ```
 
 * **`websocat`**: A command-line client for WebSockets, useful for sending and receiving messages.
   * **Installation instructions**: Refer to the `websocat` GitHub repository for various installation methods (package managers, cargo, pre-built binaries): [https://github.com/vi/websocat](https://github.com/vi/websocat)
   * **Example (Homebrew for macOS):** `brew install websocat`
-  * **Example (Rust's Cargo):** `cargo install websocat`
 
 ## Usage examples
 
