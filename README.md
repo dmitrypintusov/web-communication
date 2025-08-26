@@ -152,7 +152,7 @@ grpcurl -v -insecure -d '{"question": "What is bidirectional stream Grpc"}' \
 ### QUIC (HTTP/3)
 
 ```bash
-curl --http3 -k "https://localhost:8443/api/http3?question=HTTP3" --verbose
+curl --http3 -k "https://localhost:8443/api/rest?question=HTTP3" --verbose
 ```
 ---
 
